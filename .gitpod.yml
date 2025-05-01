@@ -1,0 +1,23 @@
+# .gitpod.yml
+image:
+  file: .gitpod.Dockerfile
+
+tasks:
+  - init: |
+      micromamba activate bioenv && \
+      nextflow self-test && \
+      nf-core list
+  - name: Open terminal
+    command: bash
+
+vscode:
+  extensions:
+    - ms-python.python
+    - ms-toolsai.jupyter
+    - eamodio.gitlens
+    - bbenoist.shell-format
+
+ports:
+  - port: 8888
+    onOpen: open-preview
+    visibility: public

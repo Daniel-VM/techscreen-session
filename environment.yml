@@ -1,0 +1,22 @@
+name: ibbis
+channels:
+  - conda-forge
+  - bioconda
+  - defaults
+dependencies:
+  - python=3.10
+  - nextflow
+  - nf-core
+  - hmmer
+  - blast
+  - fastqc
+  - multiqc
+  - samtools
+  - bedtools
+  - biopython
+  - pandas
+  - matplotlib
+  - jupyterlab
+  - pip
+  - pip:
+      - rich
