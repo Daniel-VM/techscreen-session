@@ -1,21 +1,29 @@
-# .gitpod.yml
 image:
-  file: .github/.gitpod.Dockerfile
+  file: .gitpod.Dockerfile
 
 tasks:
-  - init: |
-      micromamba activate bioenv && \
-      nextflow self-test && \
-      nf-core list
+  - name: Test dependencies
+    command: |
+      source /opt/conda/bin/activate ibbis
+      nextflow -version
+      nf-core --version
+      pytest --version
+      echo "Environment is ready!"
+
   - name: Open terminal
     command: bash
 
 vscode:
   extensions:
+    - codezombiech.gitignore
+    - esbenp.prettier-vscode
+    - EditorConfig.EditorConfig
+    - Gruntfuggly.todo-tree
+    - nextflow.nextflow
+    - streetsidesoftware.code-spell-checker
     - ms-python.python
+    - redhat.vscode-yaml
     - ms-toolsai.jupyter
-    - eamodio.gitlens
-    - bbenoist.shell-format
 
 ports:
   - port: 8888
