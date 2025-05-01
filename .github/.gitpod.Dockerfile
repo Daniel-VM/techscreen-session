@@ -50,6 +50,7 @@ RUN conda update --quiet --yes --all \
         prettier \
         pre-commit \
         pytest-workflow \
+        commec \
         pip \
     && conda clean --all --force-pkgs-dirs --yes \
     && echo "source activate ibbis" >> ~/.bashrc
