@@ -1,6 +1,6 @@
 # .gitpod.yml
 image:
-  file: .gitpod.Dockerfile
+  file: .github/.gitpod.Dockerfile
 
 tasks:
   - init: |
